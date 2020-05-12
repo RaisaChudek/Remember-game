@@ -1,0 +1,32 @@
+.app {
+ background-color: darkblue;
+
+ .flip-container {
+  perspective: 1000px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: white;
+ }
+
+ .flip-container.flipped .flipper {
+  transform: rotate(180deg);
+ }
+
+ .flipper {
+  transition: .6s;
+  transform-style: preserve-3d;
+  position: relative;
+ }
+
+ .front,
+ .back {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+ }
+
+ .back {
+
+ }
+}
