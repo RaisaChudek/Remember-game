@@ -1,24 +1,28 @@
-import React, {Component} from "react";
+import React, {useState,useEffect} from "react";
 import ReactDOM from "react-dom";
 import "../sass/styles.scss";
-import "./Card";
+import {Board} from "./Board";
+import initializeDeck from "./deck" ;
 
 const App = () => {
 
-    const cardsColors = ["red", "blue", "green", "yellow"]
+    const [cards,setCards] = useState([]);
+
+    const [flipped, setFlipped] = useState([]);
+
+    useEffect(() =>{
+        setCards(initializeDeck())
+    },[]);
+
+    const handleClick = (id) => {
+        setFlipped([...flipped, id]);
+    }
 
     return (
         <div className="app" >
             <h2>Match 2 cards</h2>
-            <Card
-                id={1}
-                width={100}
-                height={100}
-                back={"../images/back.jpeg"}
-                front={`/images/bird.jpeg`}
-                flipped={flipped.includes(1)}
-                handleClick={()=>handleClick(1)}
-                />
+            <Board cards={cards} handleClick={handleClick} flipped={flipped}/>
+
         </div>
     )
 }
