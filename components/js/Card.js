@@ -7,10 +7,15 @@ export function Card({handleClick,
                          type,
                          flipped,
                          back,
-                         height,width}) {
+                         height,
+                         width,
+                     disabled}) {
 
     return <div
-        className={`flip-container ${flipped ? 'flipped' : ''}`} style={{width,height}} onClick={()=>handleClick(id)}>
+        className={`flip-container ${
+            flipped ? 'flipped' : ''}`}
+        style={{width,height}}
+        onClick={()=> disabled ? null : handleClick(id)}>
 
         <div className="flipper"><img style={{height,width}} className={flipped ? 'front' : 'back'} src={flipped ? `../images/${type}.jpg` : back}
         />
