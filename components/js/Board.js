@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {Card} from "./Card";
 
-// funkcja do tworzenia
-export function Board ({disabled,dimension,cards,flipped,handleClick}) {
+//
+export function Board ({disabled,dimension,cards,flipped,handleClick,solved}) {
 
     return <div className="board" >
 
@@ -11,24 +10,17 @@ export function Board ({disabled,dimension,cards,flipped,handleClick}) {
             <Card
             key = {card.id}
             id={card.id}
-            width={dimension / 4.5 } //tu nastawiam szerokosc boarda
-            height={dimension /4.5 }
+            width={dimension / 4} //tu nastawiam szerokosc boarda
+            height={dimension / 5}
             type={card.type}
-            back={"../images/back.jpeg"}
+            back={"../images/back3.jpg"}
             //front={"../images/bird.jpg"}
             flipped={flipped.includes(card.id)}
-            handleClick={()=>handleClick(card.id)}
-            disabled={disabled}
+            handleClick={handleClick}
+            disabled={disabled || solved.includes(card.id)}
+            solved={solved.includes(card.id)}
+
         /> ))}
     </div>
 }
-
-Board.propTypes = {
-    disabled: PropTypes.bool.isRequired,
-    dimension: PropTypes.number.isRequired,
-    cards: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    flipped: PropTypes.arrayOf(PropTypes.number).isRequired,
-    handleClick: PropTypes.func.isRequired,
-}
-
 

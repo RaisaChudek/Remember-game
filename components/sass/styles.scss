@@ -1,19 +1,35 @@
 .app {
- background-color: darkblue;
- height: 100vh;
-  width: 100%;
 
+ background: linear-gradient(to bottom,rgba(255,22,42,0.3),black);
+ height: 900px;
+ width: 100%;
+ margin: 0 auto;
+ border: 1px solid black;
+
+
+.title {
+ color: darkred;
+ /*margin-left: 650px;*/
+ justify-self: center;
+ font-family: Ultra, serif;
+ font-size: 50px;
+ align-content: center;
+ justify-content: center;
+ display: flex;
+ margin-top: 20px;
+
+}
 
 //CARD
  .flip-container {
   perspective: 1000px;
   display: inline-block;
-  border: 1px solid black;
-  background-color: #ff9769;
+  border: 5px solid black;
+  background-color: darkgoldenrod;
  }
 
  .flip-container.flipped .flipper {
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
  }
 
  .flipper {
@@ -36,12 +52,86 @@
  }
 
  .front {
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
  }
 
 //BOARD
  .board {
-  margin: 0;
-  padding: 0;
+  padding: 10px;
+/*  border: 1px solid white;*/
+
+  margin-left: 100px
+ ;
  }
+
+ //TIMER
+
+ .divTimer{
+  display: inline-block;
+  width: 100%;
+ }
+ .timer {
+  color: maroon;
+  display: flex;
+  margin-top: 10px;
+  font-family: Bree Serif, Serif;
+  margin-top: -2px;
+  margin-left: 130px;
+ }
+
+ // buttony
+button {
+ background-color: black;
+ color: white;
+ border: 3px solid maroon;
+ border-radius: 8px;
+ margin-right: 10px;
+
+ align-self: center;
 }
+.button {
+ margin-left: 130px;
+ margin-bottom: 30px;
+}
+
+ .winTitle {
+  font-family: Bree Serif, Serif;
+  color: white;
+  font-size: 40px;
+  z-index: 2;
+  margin-left: 300px;
+
+ }
+
+ @keyframes pulsowanie {
+  0% {
+   width:0px;
+
+  }
+  100% {
+   width:400px;
+
+  }}
+
+
+
+}
+
+
+
+
+/*.board {
+ width:80px;
+ height:80px;
+ animation: pulsowanie 2s alternate;
+}
+
+@keyframes pulsowanie {
+ 0% {
+  width:0px;
+
+ }
+ 100% {
+  width:400px;
+
+ }}*/

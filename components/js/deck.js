@@ -14,7 +14,7 @@ function shuffle(array) {
 //tworzę tablicę z kartami
 export default function initializeDeck() {
     let id = 0;
-    const cards = ["adler", "bird", "bird2", "flaming", "gulls", "kingfisher", "owl", "sparrow", "swan" ].reduce((acc, type) => {
+    const cards = ["adler", "bird", "bird2", "flaming", "gulls", "kingfisher", "owl", "sparrow", "swan"].reduce((acc, type) => {
         acc.push({
             id: id++,
             type
